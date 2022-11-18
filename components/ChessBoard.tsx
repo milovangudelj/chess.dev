@@ -68,7 +68,6 @@ const ChessBoard = () => {
 
 		let italianMoves = ["e4", "e5", "Nf3", "Nc6", "Bc4", "d6"];
 
-		chess.reset();
 		const playItalian = () => {
 			if (italianMoves.length > 0) {
 				chess.move(italianMoves[0]);
@@ -82,7 +81,8 @@ const ChessBoard = () => {
 			}
 			setBoard(printBoard(chess.board()));
 		};
-		playItalian();
+		// chess.reset();
+		// playItalian();
 	}, [chess]);
 
 	return (
