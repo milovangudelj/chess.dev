@@ -55,7 +55,7 @@ const ChessBoard = () => {
 
 	useEffect(() => {
 		init().then((_exports) => {
-			greet(); // Coming straight from rust baby
+			greet("Milo"); // Coming straight from rust baby
 		});
 
 		const playRandom = () => {
