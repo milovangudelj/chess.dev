@@ -1,9 +1,10 @@
 "use client";
 
-import { Color, Move, PieceSymbol } from "chess.js";
-import { Square } from "chess.js";
-import { Chess } from "chess.js";
 import { useEffect, useState } from "react";
+import { Color, Move, PieceSymbol, Square, Chess } from "chess.js";
+
+import init, { greet } from "chess_dev-chessboard";
+
 import ChessSquare from "./ChessSquare";
 
 const printBoard = (
@@ -53,6 +54,10 @@ const ChessBoard = () => {
 	const [board, setBoard] = useState<JSX.Element>(printBoard(chess.board()));
 
 	useEffect(() => {
+		init().then((_exports) => {
+			greet(); // Coming straight from rust baby
+		});
+
 		const playRandom = () => {
 			setBoard(printBoard(chess.board()));
 
